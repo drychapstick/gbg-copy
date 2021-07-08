@@ -57,7 +57,7 @@ function startTime() {
   var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10 :)
   return i;
 }
 </script>
@@ -75,7 +75,7 @@ function checkTime(i) {
     var month = d.getMonth();
     var day = d.getDate();
     var photoindex = (((month+1)*day)%50)+1;
-    var urlPhoto = "https://github.com/JeremyLau01/New-Tab-Better-Images/blob/master/BackgroundImages/"+photoindex+".jpg";
+    var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/New-Tab-Better-Images/master/BackgroundImages/"+photoindex+".jpg";
     document.getElementById("myImg").src = urlPhoto;
   </script>
   
