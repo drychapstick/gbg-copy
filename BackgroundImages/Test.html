@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--Webpage by: Jeremy Lau-->
+<!--Go to https://jeremylau01.github.io/welcome/ to see more of my projects!-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("https://raw.githubusercontent.com/JeremyLau01/NewTab/blob/master/Lato-Regular.ttf");
+}
+  
+.bg {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  margin: 0;
+  padding: 0;
+  background-size:100% 100%;
+  background-repeat: no-repeat;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1100%;
+  font-family: Lato, Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+.testTings {
+  position: absolute;
+}
+
+</style>
+  
+  
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  m = checkTime(m);
+  f = ((h+ 11) % 12 + 1) + ":" + m;
+  document.getElementById('txt').innerHTML =
+  f;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10 :)
+  return i;
+}
+
+var photonum = 0;
+
+function nextImage() {
+  photonum += 1;
+  var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/New-Tab-Better-Images/master/BackgroundImages/"+photonum+".jpg";
+  document.getElementById("myImg").src = urlPhoto;
+  var butText = document.getElementById("buttonCounter");
+  butText.innerText = "Image Number: " + photonum;
+};
+
+function prevImage() {
+  photonum -= 1;
+  var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/New-Tab-Better-Images/master/BackgroundImages/"+photonum+".jpg";
+  document.getElementById("myImg").src = urlPhoto;
+  var butText = document.getElementById("buttonCounter");
+  butText.innerText = "Image Number: " + photonum;
+};
+
+</script>
+</head>
+<body onload="startTime()">
+
+<div class="testTings">
+  <button type="button" onClick="nextImage()">Next Img</button>
+  <button type="button" onClick="prevImage()">Previous Img</button>
+  <button type="button" id="buttonCounter">Image Number: </button>
+</div>
+
+
+
+
+
+<div class="centered">
+ <div id="txt"></div>  
+</div>
+  
+<img class="bg" id="myImg" src="img" alt="image">
+  
+</body>
+</html>
