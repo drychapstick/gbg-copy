@@ -51,9 +51,21 @@ function startTime() {
   var h = today.getHours();
   var m = today.getMinutes();
   m = checkTime(m);
-  f = ((h+ 11) % 12 + 1) + ":" + m;
-  document.getElementById('txt').innerHTML =
-  f;
+  
+  var dd = String(today.getDate());
+  var mm = String(today.getMonth() + 1); //January is 0!
+  var yyyy = today.getFullYear();
+
+  var start_txt = mm + '/' + dd + '/' + yyyy;
+
+  if (h >= 12){
+    var a = 'PM'
+  } else{
+    var a = 'AM'
+  }
+
+  f = start_txt + " " + ((h+ 11) % 12 + 1) + ":" + m + " " + a;
+  document.getElementById('txt').innerHTML = f;
   var t = setTimeout(startTime, 500);
 }
 function checkTime(i) {
@@ -62,6 +74,7 @@ function checkTime(i) {
 }
 </script>
 </head>
+
 <body onload="startTime()">
 
 <div class="centered">
@@ -71,10 +84,6 @@ function checkTime(i) {
 <img class="bg" id="myImg" src="img" alt="image">
 
   <script>
-    var d = new Date();
-    var month = d.getMonth();
-    var day = d.getDate();
-    var photoindex = (((month+1)*day)%50)+1;
     var urlPhoto = "https://raw.githubusercontent.com/JeremyLau01/gbg/master/BackgroundImages/baseimg.png";
     document.getElementById("myImg").src = urlPhoto;
   </script>
