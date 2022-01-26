@@ -36,14 +36,15 @@ body, html {
 }
 .centered {
   position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 14%;
+  right: 0;
+  left: 0;
+  text-align: center;
+
   color: white;
-  font-size: 150%;
+  font-size: 210%;
   font-family: 'Open Sans', sans-serif;
-  font-weight:normal;
-  font-style:normal;
+
 }
 </style>
   
@@ -81,7 +82,7 @@ function checkTime(i) {
 <body onload="startTime()">
 
 <div class="centered">
- <div id="txt"></div>  
+  <p><div id="txt"></div></p>
 </div>
   
 <img class="bg" id="myImg" src="img" alt="image">
